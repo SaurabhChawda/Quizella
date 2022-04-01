@@ -9,6 +9,7 @@ export function Card() {
               <img
                 className="card__bg--img"
                 src="/assets/image/Category/History.jpg"
+                alt="History category"
               />
             </div>
             <div className="card__content">
