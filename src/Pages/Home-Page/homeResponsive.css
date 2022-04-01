@@ -1,0 +1,52 @@
+@media screen and (max-width: 1150px) {
+  .card-product {
+    margin: 3em 2em;
+  }
+}
+@media screen and (max-width: 800px) {
+  /* For Layout */
+  .home-page {
+    grid-template-rows: 4rem auto;
+    grid-template-areas:
+      "header header header"
+      "main main main";
+  }
+  /* Card */
+
+  .card {
+    margin: 3rem;
+  }
+
+  /* Hide Desktop Navbar */
+
+  .nav-bar--simple {
+    display: none;
+  }
+  /* Hide Footer */
+
+  .footer {
+    display: none;
+  }
+
+  /* Show Mobile Navbar */
+
+  .nav-bar--mobile {
+    padding-right: 8px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav__input--search {
+    width: 75%;
+  }
+
+  /* bottom nav bar */
+  .nav-bar-tab {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .card {
+    margin: 3em 1.5em;
+  }
+}
