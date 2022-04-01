@@ -1,30 +1,25 @@
-import logo from "./logo.svg";
 import "./App.css";
-import { useEffect } from "react";
-
+import { Home } from "../src/Pages/Home-Page/Home";
+// import { Login } from "../src/Pages/Login-Page/Login";
+// import { Signup } from "../src/Pages/Signup-Page/Signup";
+// import { QuizRules } from "./Pages/Rules/QuizRules";
+// import { QuizQuestions } from "./Pages/Question-Page/QuizQuestions";
+// import { Report } from "./Pages/Report-Page/Report";
+// import { Result } from "./Pages/Result-Page/Result";
+import { Route, Routes } from "react-router-dom";
 function App() {
-  useEffect(() => {
-    fetch("/api/data")
-      .then((res) => res.json())
-      .then((json) => console.log(json.data));
-  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        {/* <Route path="/login/" element={<Login />}></Route>
+        <Route path="/signup/" element={<Signup />}></Route>
+        <Route path="/rules/" element={<QuizRules />}></Route>
+        <Route path="/questions/" element={<QuizQuestions />}></Route>
+        <Route path="/result/" element={<Result />}></Route>
+        <Route path="/report/" element={<Report />}></Route> */}
+      </Routes>
+    </>
   );
 }
 
