@@ -1,30 +1,30 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./NavForTab.css";
 export const NavForTab = () => {
   return (
     <div className="nav-bar-tab">
       <div className="nav-bar-tab-container">
-        <NavLink to="/">
+        <Link to="/">
           <img
             className="nav-bar-tab--icon"
             src="/assets/image/HomePage-Images/home.png"
             alt="Home"
           />
-        </NavLink>
-        <NavLink to="/report/">
+        </Link>
+        <Link to="/report/">
           <img
             className="nav-bar-tab--icon"
             src="/assets/image/HomePage-Images/Report.png"
             alt="Report"
           />
-        </NavLink>
-        <NavLink to="/login/">
+        </Link>
+        <Link to="/login/">
           <img
             className="nav-bar-tab--icon"
             src="/assets/image/HomePage-Images/Login.png"
             alt="Login"
           />
-        </NavLink>
+        </Link>
       </div>
     </div>
   );
