@@ -11,8 +11,8 @@
 }
 /* main */
 .home__main {
-  padding-bottom: 6rem;
-  min-height: 84vh;
+  padding-bottom: 4rem;
+  min-height: calc(100vh - 9rem);
   grid-area: main;
   background-color: var(--primary-color);
 }

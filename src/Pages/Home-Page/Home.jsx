@@ -1,6 +1,6 @@
 import { Nav } from "../../components/Nav/Nav";
-// import { Footer } from "../../components/Footer/Footer";
-// import { Card } from "../../components/Card/Card";
+import { Footer } from "../../components/Footer/Footer";
+import { Card } from "../../components/Card/Card";
 import { Header } from "../../components/Header/Header";
 import { NavForTab } from "../../components/NavForTab/NavForTab";
 import "./home.css";
@@ -13,10 +13,10 @@ export function Home() {
         <Nav value={true} />
         <Header value={true} />
         <main className="home__main">
-          {/* <Card /> */}
+          <Card />
           <NavForTab />
         </main>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </>
   );

@@ -6,7 +6,7 @@
 @media screen and (max-width: 800px) {
   /* For Layout */
   .home-page {
-    grid-template-rows: 4rem auto;
+    grid-template-rows: 4rem minmax(calc(100vh - 4rem), auto);
     grid-template-areas:
       "header header header"
       "main main main";
