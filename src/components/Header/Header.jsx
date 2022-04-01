@@ -4,7 +4,7 @@ import { SearchBar } from "../SearchBar/SearchBar";
 
 export const Header = ({ value }) => {
   return (
-    <>
+    <div>
       <div className="nav-bar nav-bar--mobile">
         <div className="nav-bar--logo">
           <NavLink to="/">
@@ -17,6 +17,6 @@ export const Header = ({ value }) => {
         </div>
         <div className="nav-bar--serach">{value && <SearchBar />}</div>
       </div>
-    </>
+    </div>
   );
 };
