@@ -1,7 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    fetch("/api/data")
+      .then((res) => res.json())
+      .then((json) => console.log(json.data));
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
