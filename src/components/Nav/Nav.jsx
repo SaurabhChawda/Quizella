@@ -3,7 +3,7 @@ import "./nav.css";
 import { NavLink } from "react-router-dom";
 import { SearchBar } from "../SearchBar/SearchBar";
 
-export function Nav({value}) {
+export function Nav({ value }) {
   return (
     <div>
       {/* Navigation Bar Desktop */}
@@ -12,7 +12,7 @@ export function Nav({value}) {
           <NavLink to="/">
             <img
               className="nav-bar__img--logo"
-              src="/assets/image/HomePage-Images/QuizBee-Logo.png"
+              src="/assets/image/HomePage-Images/Quizella.png"
               alt="Trendy-T"
             />
           </NavLink>

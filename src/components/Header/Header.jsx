@@ -10,7 +10,7 @@ export const Header = ({ value }) => {
           <NavLink to="/">
             <img
               className="nav-bar__img--logo"
-              src="/assets/image/HomePage-Images/QuizBee-Logo.png"
+              src="/assets/image/HomePage-Images/Quizella.png"
               alt="Trendy-T"
             />
           </NavLink>
