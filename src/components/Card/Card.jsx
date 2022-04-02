@@ -13,12 +13,12 @@ export function Card() {
                   <div className="card__bg">
                     <img
                       className="card__bg--img"
-                      src="/assets/image/Category/History.jpg"
+                      src={item.img}
                       alt="History category"
                     />
                   </div>
                   <div className="card__content">
-                    <h3 className="card__content--title">History</h3>
+                    <h3 className="card__content--title">{item.category}</h3>
                   </div>
                 </div>
                 <div className="card__secondary--actions">

@@ -2,7 +2,7 @@ import "./App.css";
 import { Home } from "../src/Pages/Home-Page/Home";
 // import { Login } from "../src/Pages/Login-Page/Login";
 // import { Signup } from "../src/Pages/Signup-Page/Signup";
-import { QuizRules } from "./Pages/Rules/QuizRules";
+// import { QuizRules } from "./Pages/Rules/QuizRules";
 // import { QuizQuestions } from "./Pages/Question-Page/QuizQuestions";
 // import { Report } from "./Pages/Report-Page/Report";
 // import { Result } from "./Pages/Result-Page/Result";
@@ -14,7 +14,7 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         {/* <Route path="/login/" element={<Login />}></Route>
         <Route path="/signup/" element={<Signup />}></Route>*/}
-        <Route path="/rules/" element={<QuizRules />}></Route>
+        {/* <Route path="/rules/" element={<QuizRules />}></Route> */}
         {/* <Route path="/questions/" element={<QuizQuestions />}></Route>
         <Route path="/result/" element={<Result />}></Route>
         <Route path="/report/" element={<Report />}></Route> */}
