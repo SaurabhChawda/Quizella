@@ -1,22 +1,16 @@
-import { useEffect, useState } from "react";
 import { useSearch } from "../../Context/SearchContext";
 import "./searchbar.css";
 export const SearchBar = () => {
   const { setUpdatedData, data } = useSearch();
-  const [filteredtext, setFilterredtext] = useState("");
   const newdata = [...data];
 
-  useEffect(() => {
-    if (filteredtext === "") {
-      return setUpdatedData(newdata);
-    } else {
-      return setUpdatedData(
-        newdata.filter((item) =>
-          item.category.toLowerCase().match(filteredtext.toLowerCase())
-        )
-      );
-    }
-  }, [filteredtext]);
+  const searchHandler = (value) => {
+    return setUpdatedData(
+      newdata.filter((item) =>
+        item.category.toLowerCase().match(value.toLowerCase())
+      )
+    );
+  };
 
   return (
     <div className="searchbar">
@@ -24,7 +18,7 @@ export const SearchBar = () => {
         className="nav__input--search"
         type="search"
         placeholder="Search Category"
-        onChange={(e) => setFilterredtext(e.target.value)}
+        onChange={(e) => searchHandler(e.target.value)}
       />
     </div>
   );
