@@ -1,7 +1,9 @@
 import "./card.css";
 import { useSearch } from "../../Context/SearchContext";
+import { useNavigate } from "react-router-dom";
 export function Card() {
   const { updatedData } = useSearch();
+  const navigate = useNavigate();
   return (
     <div>
       <section className="card">
@@ -22,7 +24,12 @@ export function Card() {
                   </div>
                 </div>
                 <div className="card__secondary--actions">
-                  <button className="card__btn card__button--primary">
+                  <button
+                    className="card__btn card__button--primary"
+                    onClick={() => {
+                      navigate("/rules/");
+                    }}
+                  >
                     Start Now
                   </button>
                   <div className="card__badge">
