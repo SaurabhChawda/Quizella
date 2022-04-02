@@ -4,15 +4,14 @@ const SearchContext = createContext();
 
 const SearchProvider = ({ children }) => {
   const { data } = useData();
-  const newdata = [...data];
   const [updatedData, setUpdatedData] = useState();
 
   useEffect(() => {
-    setUpdatedData(newdata);
+    setUpdatedData(data);
   }, [data]);
 
   return (
-    <SearchContext.Provider value={{ updatedData, setUpdatedData, newdata }}>
+    <SearchContext.Provider value={{ updatedData, setUpdatedData, data }}>
       {children}
     </SearchContext.Provider>
   );

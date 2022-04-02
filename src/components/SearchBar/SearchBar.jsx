@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { useSearch } from "../../Context/SearchContext";
 import "./searchbar.css";
 export const SearchBar = () => {
-  const { updatedData, setUpdatedData, newdata } = useSearch();
+  const { setUpdatedData, data } = useSearch();
   const [filteredtext, setFilterredtext] = useState("");
+  const newdata = [...data];
 
   useEffect(() => {
     if (filteredtext === "") {
