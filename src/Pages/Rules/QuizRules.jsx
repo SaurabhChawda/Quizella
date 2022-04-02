@@ -14,7 +14,7 @@ export const QuizRules = () => {
           </div>
           <ul className="quiz-rules__list">
             <li className="quiz-rules__list-item">
-              Read the Question Carefully
+              Read the Questions Carefully
             </li>
             <li className="quiz-rules__list-item">
               Each question in the quiz is of multiple-choice.
@@ -29,7 +29,7 @@ export const QuizRules = () => {
               Each wrong answer will have 3 negative point.
             </li>
             <li className="quiz-rules__list-item">
-              There will be no negative point for skiping the question.
+              There will be no negative point for skipping the question.
             </li>
           </ul>
           <div className="quiz-rules__button--container">
