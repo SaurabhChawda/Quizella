@@ -27,7 +27,7 @@ export function Card() {
                   <button
                     className="card__btn card__button--primary"
                     onClick={() => {
-                      navigate("/rules/");
+                      navigate("/rule/");
                     }}
                   >
                     Start Now

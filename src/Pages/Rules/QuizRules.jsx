@@ -41,7 +41,7 @@ export const QuizRules = () => {
             </button>
             <button
               className="quiz-rules__btn quiz-rules__button--secondary"
-              onClick={() => navigate("/questions/")}
+              onClick={() => navigate("/question/")}
             >
               Start
             </button>
