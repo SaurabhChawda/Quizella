@@ -3,15 +3,18 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
-// import { DataProvider } from "./Context/DataContext.jsx";
+import { DataProvider } from "./Context/DataContext.jsx";
+import { SearchProvider } from "./Context/SearchContext";
 import "./server";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      {/* <DataProvider> */}
-        <App />
-      {/* </DataProvider> */}
+      <DataProvider>
+        <SearchProvider>
+          <App />
+        </SearchProvider>
+      </DataProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
