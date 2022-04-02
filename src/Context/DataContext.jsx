@@ -8,9 +8,8 @@ const DataProvider = ({ children }) => {
   useEffect(() => {
     (async () => {
       try {
-        await axios
-          .get("/api/data")
-          .then((response) => setdata(response.data.data));
+        const response = await axios.get("/api/data");
+        setdata(response.data.data);
       } catch (error) {
         console.log(error);
       }
