@@ -5,7 +5,7 @@ import { useQuiz } from "../../Context/QuizContext";
 export function Card() {
   const { updatedData } = useSearch();
   const navigate = useNavigate();
-  const { state, dispatch } = useQuiz();
+  const { dispatch } = useQuiz();
   return (
     <div>
       <section className="card">
