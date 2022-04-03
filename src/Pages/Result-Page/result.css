@@ -1,0 +1,136 @@
+/* Rules Page Starts Here*/
+.result-page {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--primary-color);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+/* Results Header Start Here */
+.result--header {
+  display: flex;
+  justify-content: center;
+}
+
+.result--header--container {
+  display: flex;
+  align-items: center;
+  max-width: 50rem;
+  margin: 2rem;
+  background-color: var(--white-color);
+  border: 2px solid var(--white-color);
+  border-radius: 5px;
+}
+.result__img--container {
+  width: 15%;
+}
+.result__img {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+/* Results Header Ends Here */
+
+/* Result Total Score Start Here*/
+.result--quiz-report {
+  width: 85%;
+}
+.result--quiz-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.result--quiz-demo {
+  width: 40%;
+  text-align: center;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  font-size: var(--font-size-regular);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Result total Score Ends Here */
+.result--correct-answer--container {
+  display: grid;
+  grid-template-rows: repeat(auto, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  margin: 3rem;
+}
+/* Result Correct Answer*/
+.result--content {
+  margin: 1rem;
+  padding: 1rem 2rem;
+  border: 2px solid var(--white-color);
+  border-radius: 5px;
+  box-shadow: 0px 0px 8px 1px grey;
+  background-color: var(--white-color);
+}
+
+/* quiz result list Questions  */
+.result__list--question {
+  min-height: 6rem;
+  padding: 0.5rem;
+  border: 2px solid var(--primary-color);
+  margin: 0.5rem 0;
+  border-radius: 5px;
+}
+.result--options {
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+.result__btn {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  font-size: var(--font-size-regular);
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* quiz Question list */
+
+/* quiz Question list Ends here  */
+
+/* media queries */
+@media screen and (max-width: 600px) {
+  .result--header--container {
+    flex-direction: column;
+  }
+  .result__img--container {
+    width: 25%;
+  }
+  .result--quiz-report {
+    width: 100%;
+  }
+  .result--options {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+  }
+}
+@media screen and (max-width: 1100px) {
+  .result--content-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .result--correct-answer--container {
+    grid-template-rows: repeat(auto, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    margin: 3rem 6rem;
+  }
+}
+@media screen and (max-width: 850px) {
+  .result--correct-answer--container {
+    margin: 3rem 1rem;
+  }
+}
