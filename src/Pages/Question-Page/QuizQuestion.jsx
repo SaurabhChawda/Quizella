@@ -1,5 +1,7 @@
 import "./quiz-question.css";
+import { useNavigate } from "react-router-dom";
 export const QuizQuestion = () => {
+  const navigate = useNavigate();
   return (
     <div className="quiz-question-page ">
       <section className="quiz-question--container">
@@ -43,7 +45,10 @@ export const QuizQuestion = () => {
             <button className=" quiz-question__btn quiz-question__button--primary">
               Quit
             </button>
-            <button className="quiz-question__btn quiz-question__button--secondary">
+            <button
+              className="quiz-question__btn quiz-question__button--secondary"
+              onClick={() => navigate("/result/")}
+            >
               Skip
             </button>
           </div>
