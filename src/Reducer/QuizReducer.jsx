@@ -33,5 +33,7 @@ export const QuizReducer = (state, action) => {
         CurrentQuiz: {},
         Result: { ...state.Result, score: 0, correct: 0, wrong: 0, attempt: 0 },
       };
+    default:
+      return state;
   }
 };
