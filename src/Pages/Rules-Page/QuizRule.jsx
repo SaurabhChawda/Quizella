@@ -1,6 +1,6 @@
-import "./quizrules.css";
+import "./quizrule.css";
 import { useNavigate } from "react-router-dom";
-export const QuizRules = () => {
+export const QuizRule = () => {
   const navigate = useNavigate();
   return (
     <div className="quiz-rules-page ">
