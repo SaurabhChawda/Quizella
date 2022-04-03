@@ -98,7 +98,19 @@
   border-radius: 5px;
   cursor: pointer;
 }
-/* quiz Question list */
+/* result page Close Button */
+.result-page-close--container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+.result-page--close {
+  padding: 0.5rem 1rem;
+  background-color: var(--white-color);
+  color: var(--black-color);
+  font-size: var(--font-size-medium);
+  border-radius: 0.5rem;
+}
 
 /* quiz Question list Ends here  */
 

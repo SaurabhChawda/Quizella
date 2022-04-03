@@ -1,11 +1,13 @@
 import "./quizrule.css";
 import { useNavigate } from "react-router-dom";
+import { useQuiz } from "../../Context/QuizContext";
 export const QuizRule = () => {
   const navigate = useNavigate();
+  const { state } = useQuiz();
   return (
     <div className="quiz-rules-page ">
       <div className="quiz-rules--header">
-        <h1 className="quiz-rules__title">Selected Category</h1>
+        <h1 className="quiz-rules__title">{state.CurrentQuiz.category}</h1>
       </div>
       <section className="quiz-rules--container">
         <div className="quiz-rules--content-container">

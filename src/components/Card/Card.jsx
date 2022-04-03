@@ -1,9 +1,11 @@
 import "./card.css";
 import { useSearch } from "../../Context/SearchContext";
 import { useNavigate } from "react-router-dom";
+import { useQuiz } from "../../Context/QuizContext";
 export function Card() {
   const { updatedData } = useSearch();
   const navigate = useNavigate();
+  const { state, dispatch } = useQuiz();
   return (
     <div>
       <section className="card">
@@ -28,6 +30,12 @@ export function Card() {
                     className="card__btn card__button--primary"
                     onClick={() => {
                       navigate("/rule/");
+                      dispatch({
+                        type: "Category",
+                        payload: updatedData.filter(
+                          (dataitem) => dataitem.category === item.category
+                        ),
+                      });
                     }}
                   >
                     Start Now

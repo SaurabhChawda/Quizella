@@ -1,59 +1,79 @@
 import "./quiz-question.css";
+import { useQuiz } from "../../Context/QuizContext";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Modal } from "../../components/Modal/Modal.jsx";
+
 export const QuizQuestion = () => {
+  const [nextQuestion, setnextQuestion] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
+  const { state, dispatch } = useQuiz();
   const navigate = useNavigate();
+
   return (
-    <div className="quiz-question-page ">
-      <section className="quiz-question--container">
-        <div className="quiz-question--content-container">
-          <div className="quiz-question--header">
-            <h4 className="quiz-question--header-demo quiz-question--counter">
-              Q- 10/10
-            </h4>
-            <h1 className="quiz-question--title">Category</h1>
-            <h4 className="quiz-question--header-demo quiz-question--timer">
-              00:00
-            </h4>
-          </div>
-          <ul className="quiz-question__list">
-            <li className="quiz-question__list-item">
-              Question 1 :- Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Dolor magni reiciendis eveniet, maxime tenetur officiis
-              optio ipsam quisquam nisi doloribus commodi eligendi quaerat?
-              Molestiae autem expedita officia consequatur distinctio harum.
-            </li>
-          </ul>
-          <div className="quiz-question--options">
-            <div className="quiz-question__btn--options">
-              <button className="quiz-question__btn-demo quiz-question__btn-one">
-                Option one
-              </button>
-              <button className="quiz-question__btn-demo quiz-question__btn-two">
-                Option two
-              </button>
-            </div>
-            <div className="quiz-question__btn--options">
-              <button className="quiz-question__btn-demo quiz-question__btn-three">
-                Option three
-              </button>
-              <button className="quiz-question__btn-demo quiz-question__btn-four">
-                Option four
-              </button>
-            </div>
-          </div>
-          <div className="quiz-question__button--container">
-            <button className=" quiz-question__btn quiz-question__button--primary">
-              Quit
-            </button>
-            <button
-              className="quiz-question__btn quiz-question__button--secondary"
-              onClick={() => navigate("/result/")}
-            >
-              Skip
-            </button>
-          </div>
-        </div>
-      </section>
+    <div className="quiz-question-page">
+      {isOpen && <Modal value={{ isOpen, setIsOpen }} />}
+
+      {nextQuestion === 10 && navigate("/result/")}
+
+      {state.CurrentQuiz.ques &&
+        state.CurrentQuiz.ques
+          .filter((item, index) => index === nextQuestion)
+          .map((item) => {
+            return (
+              <section className="quiz-question--container">
+                <div className="quiz-question--content-container">
+                  <div className="quiz-question--header">
+                    <h4 className="quiz-question--header-demo quiz-question--counter">
+                      Q- {nextQuestion + 1}/10
+                    </h4>
+                    <h1 className="quiz-question--title">
+                      {state.CurrentQuiz.category}
+                    </h1>
+                    <h4 className="quiz-question--header-demo quiz-question--timer">
+                      00:00
+                    </h4>
+                  </div>
+                  <p className="quiz-question__list">{item.question}</p>
+                  <div className="quiz-question--options">
+                    {item.options.map((value) => {
+                      return (
+                        <button
+                          className="quiz-question__btn"
+                          onClick={() => {
+                            dispatch({
+                              type: "result",
+                              payload: value,
+                              correct_answer: item.correct_answer,
+                            });
+                            setnextQuestion(nextQuestion + 1);
+                          }}
+                        >
+                          {value}
+                        </button>
+                      );
+                    })}
+                  </div>
+                  <div className="quiz-question__button--container">
+                    <button
+                      className="quiz-question__btn--demo quiz-question__button--primary"
+                      onClick={() => setIsOpen(!isOpen)}
+                    >
+                      Quit
+                    </button>
+                    <button
+                      className="quiz-question__btn--demo quiz-question__button--secondary"
+                      onClick={() => {
+                        setnextQuestion(nextQuestion + 1);
+                      }}
+                    >
+                      Skip
+                    </button>
+                  </div>
+                </div>
+              </section>
+            );
+          })}
     </div>
   );
 };
