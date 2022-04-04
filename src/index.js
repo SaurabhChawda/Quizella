@@ -5,6 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
 import { DataProvider } from "./Context/DataContext.jsx";
 import { SearchProvider } from "./Context/SearchContext";
+import { QuizProvider } from "./Context/QuizContext";
 import "./server";
 
 ReactDOM.render(
@@ -12,7 +13,9 @@ ReactDOM.render(
     <Router>
       <DataProvider>
         <SearchProvider>
-          <App />
+          <QuizProvider>
+            <App />
+          </QuizProvider>
         </SearchProvider>
       </DataProvider>
     </Router>

@@ -8,10 +8,11 @@
   justify-content: center;
   align-items: center;
 }
+.quiz-question--container {
+  flex-basis: 40rem;
+}
 /* quiz-question content container */
 .quiz-question--content-container {
-  max-width: 40rem;
-  min-width: 18rem;
   margin: 0.5rem;
   padding: 1rem 2rem;
   border: 2px solid var(--white-color);
@@ -34,7 +35,7 @@
   border-radius: 5px;
 }
 
-/* quiz rules Sub title  */
+/* quiz Question Sub title  */
 
 .quiz-question--title {
   text-align: center;
@@ -43,50 +44,49 @@
   border-bottom: 2px solid var(--primary-color);
   font-size: var(--font-size-large);
 }
-/* quiz rules list item  */
-.quiz-question__list-item {
+
+/* quiz Question list */
+
+.quiz-question__list {
+  min-height: 6rem;
   padding: 0.5rem;
   border: 2px solid var(--primary-color);
   margin: 0.5rem 0;
   border-radius: 5px;
 }
-
 .quiz-question--options {
   border: 2px solid var(--primary-color);
   border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.5rem;
+  padding: 0.5rem;
 }
-.quiz-question__btn--options {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.quiz-question__btn {
   width: 100%;
-}
-.quiz-question__btn-demo {
-  margin: 0.5rem;
   padding: 0.5rem;
   background-color: var(--primary-color);
   color: var(--white-color);
   font-size: var(--font-size-regular);
-  width: 45%;
   border-radius: 5px;
   cursor: pointer;
 }
-.quiz-question__btn-demo:hover{
-  background-color: var(--white-color);
-  color: var(--primary-color);
-}
+
+/* quiz Question list Ends here  */
+
+/* Quiz Quit Skip button */
+
 .quiz-question__button--container {
   display: flex;
   justify-content: space-between;
 }
-.quiz-question__btn {
-  margin: 0.5rem;
-  padding: 8px;
-  font-size: var(--font-size-regular);
-  border: 2px solid var(--primary-color);
-  border-radius: 5px;
-  cursor: pointer;
+.quiz-question__btn--demo {
+  margin: 0.5rem 0rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
 }
+
 .quiz-question__button--primary {
   background-color: var(--primary-color);
   color: white;
@@ -98,10 +98,13 @@
 
 /* media queries */
 @media screen and (max-width: 600px) {
-  .quiz-question__btn-demo {
-    width: 100%;
-  }
   .quiz-question--content-container {
     padding: 0.5rem 1rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .quiz-question--options {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
   }
 }

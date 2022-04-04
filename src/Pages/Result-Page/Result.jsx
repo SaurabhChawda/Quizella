@@ -1,5 +1,9 @@
 import "./result.css";
+import { useQuiz } from "../../Context/QuizContext";
+import { useNavigate } from "react-router-dom";
 export const Result = () => {
+  const { state, dispatch } = useQuiz();
+  const navigate = useNavigate();
   return (
     <div className="result-page ">
       <section className="result--container">
@@ -15,46 +19,73 @@ export const Result = () => {
             <div className="result--quiz-report">
               <div className="result--quiz-container">
                 <h1 className="result--quiz-demo result--quiz-total-score">
-                  Score:
+                  Score: {state.Result.score}
                 </h1>
                 <h1 className="result--quiz-demo result--quiz-attempt-questions">
-                  Attempt:
+                  Attempt: {state.Result.attempt}
                 </h1>
               </div>
               <div className="result--quiz-container">
                 <h1 className="result--quiz-demo result--quiz-correct-answer">
-                  Correct:
+                  Correct: {state.Result.correct}
                 </h1>
                 <h1 className="result--quiz-demo result--quiz-wrong-score">
-                  wrong:
+                  wrong: {state.Result.wrong}
                 </h1>
               </div>
             </div>
           </div>
         </div>
         <div className="result--correct-answer--container">
-          <div className="result--content">
-            <p className="result__list--question">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Inventore repellendus beatae odio sed minima hic ad dolor quasi,
-              nisi tenetur qui molestias maxime adipisci asperiores quidem
-              praesentium mollitia tempora ducimus.
-            </p>
-            <div className="result--options">
-              <div className="result__btn--options">
-                <button className="result__btn">opt1</button>
-              </div>
-              <div className="result__btn--options">
-                <button className="result__btn">opt2</button>
-              </div>
-              <div className="result__btn--options">
-                <button className="result__btn">opt3</button>
-              </div>
-              <div className="result__btn--options">
-                <button className="result__btn">opt4</button>
-              </div>
-            </div>
-          </div>
+          {state.CurrentQuiz.ques &&
+            state.CurrentQuiz.ques.map((item, index) => {
+              console.log(item.length);
+              return (
+                <div key={item.id} className="result--content">
+                  <p className="result__list--question">
+                    Q-{index + 1} {item.question}
+                  </p>
+                  <div className="result--options">
+                    {item.options.map((value) => {
+                      if (item.correct_answer === value) {
+                        return (
+                          <div className="result__btn--options">
+                            <button
+                              className="result__btn"
+                              style={{ backgroundColor: "green" }}
+                            >
+                              {value}
+                            </button>
+                          </div>
+                        );
+                      } else {
+                        return (
+                          <div className="result__btn--options">
+                            <button
+                              className="result__btn"
+                              style={{ backgroundColor: "red" }}
+                            >
+                              {value}
+                            </button>
+                          </div>
+                        );
+                      }
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+        </div>
+        <div className="result-page-close--container">
+          <button
+            className="result-page--close"
+            onClick={() => {
+              dispatch({ type: "reset" });
+              navigate("/");
+            }}
+          >
+            Close
+          </button>
         </div>
       </section>
     </div>
