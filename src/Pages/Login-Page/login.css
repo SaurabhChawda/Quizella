@@ -1,0 +1,142 @@
+.login-page {
+  font-family: "Montserrat", sans-serif;
+  display: grid;
+  grid-template-rows: 4rem minmax(calc(100vh - 9rem), 1fr) 5rem;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+.login__main {
+  grid-area: main;
+  padding-bottom: 3rem;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+}
+
+/* Login form Stats Here */
+.login {
+  margin-top: 3rem;
+  flex-basis: 25rem;
+}
+.login-form {
+  margin: 0.5rem;
+  padding: 0.5rem 2rem 2px;
+  border: 2px solid var(--white-color);
+  border-radius: 5px;
+  box-shadow: 0px 0px 8px 1px grey;
+  background-color: var(--white-color);
+}
+.login--header {
+  text-align: center;
+  margin: 1rem 0;
+}
+.login__title {
+  border-bottom: 2px solid var(--primary-color);
+  padding: 0.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  font-size: var(--font-size-X-large);
+}
+.login-form__label,
+.login-form--remember-me {
+  color: var(--primary-color);
+  font-size: var(--font-size-regular);
+  font-weight: 600;
+}
+.login-form--remember-me {
+  font-weight: 100;
+}
+.login-form--primary-container {
+  display: flex;
+  flex-direction: column;
+}
+.login-form__input-demo {
+  padding: 4px 4px;
+  border-radius: 15px;
+  margin: 8px 0;
+  border: 2px solid var(--primary-color);
+  width: 100%;
+  height: 2.5rem;
+}
+.login-form__input-demo::placeholder {
+  color: var(--primary-color);
+}
+
+.login-form--password {
+  position: relative;
+}
+
+.login-form__input--password-hide-icon {
+  position: absolute;
+  right: 5px;
+  top: 16px;
+}
+
+.login-form--remember-forget-password {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+.login-form--submit {
+  text-align: center;
+  margin: 2rem 0 12px 0;
+}
+.login-form__btn--submit {
+  height: 2.5rem;
+  width: 100%;
+  padding: 4px 1rem;
+  font-size: var(--font-size-regular);
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 15px;
+}
+.login-form__btn--submit:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+}
+.login-form__btn--forget-password {
+  padding: 0 2px;
+  width: 40%;
+  font-size: var(--font-size-regular);
+  border: none;
+  background-color: transparent;
+}
+
+.login-form__btn--forget-password:hover {
+  color: red;
+  background-color: transparent;
+  border-color: red;
+}
+.login-form--new-account {
+  display: flex;
+  justify-content: center;
+}
+.login-form--logOut {
+  text-align: center;
+}
+.login-form__btn--logOut {
+  color: var(--primary-color);
+  font-size: var(--font-size-medium);
+  font-weight: 900;
+  background-color: transparent;
+  border: none;
+  margin-bottom: 5px;
+}
+.login-form__btn--logOut:hover {
+  color: red;
+}
+.login-form__btn--new-account {
+  margin: 8px;
+  background-color: transparent;
+  border: none;
+  color: var(--primary-color);
+  font-size: var(--font-size-regular);
+  cursor: pointer;
+}
+/* .searchbar{
+  visibility: hidden;
+} */
