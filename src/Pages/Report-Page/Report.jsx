@@ -82,20 +82,3 @@ export function Report() {
     </div>
   );
 }
-
-{
-  /* <div className="report--quiz-container">
-<h1 className="report--quiz-demo report--quiz-total-score">
-  Score- {item.score}
-</h1>
-<h1 className="report--quiz-demo report--quiz-attempt-questions">
-  Attempt-{item.attempt}
-</h1>
-<h1 className="report--quiz-demo report--quiz-correct-answer">
-  Correct-{item.correct_answer}
-</h1>
-<h1 className="report--quiz-demo report--quiz-wrong-score">
-  wrong-{item.wrong_answer}
-</h1>
-</div> */
-}

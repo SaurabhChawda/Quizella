@@ -77,5 +77,7 @@ export const QuizReducer = (state, action) => {
           attempt: 0,
         },
       };
+    default:
+      return state;
   }
 };
