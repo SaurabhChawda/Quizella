@@ -15,7 +15,6 @@ const DataProvider = ({ children }) => {
       }
     })();
   }, []);
-  console.log("data from network", data);
 
   return (
     <DataContext.Provider value={{ data }}>{children}</DataContext.Provider>
