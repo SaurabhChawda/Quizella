@@ -1,0 +1,95 @@
+.report-page {
+  font-family: "Montserrat", sans-serif;
+  display: grid;
+  grid-template-rows: 4rem minmax(calc(100vh - 9rem), 1fr) 5rem;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+.report__main {
+  padding-bottom: 3rem;
+  grid: main;
+  background-color: var(--primary-color);
+}
+/* Results Header Start Here */
+.report--header {
+  display: flex;
+  justify-content: center;
+}
+
+.report--header--container {
+  display: flex;
+  align-items: center;
+  max-width: 50rem;
+  margin: 2rem;
+  background-color: var(--white-color);
+  border: 2px solid var(--white-color);
+  border-radius: 5px;
+}
+.report__img--container {
+  width: 20%;
+}
+.report__img {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+/* report Total Score Start Here*/
+.report--quiz-report {
+  width: 85%;
+}
+.report--quiz-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.report--quiz-demo {
+  width: 40%;
+  text-align: center;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  font-size: var(--font-size-regular);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* report Report Ends Here */
+.report {
+  margin: 3rem 5rem;
+  display: grid;
+  gap: 20px;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+}
+
+/* report Wrapper */
+.report--wrapper {
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 5px rgb(167, 167, 167);
+  border: 4px solid var(--secondary-color);
+}
+.report--header--wrapper {
+  text-align: center;
+  padding: 0.5rem;
+  font-size: var(--font-size-large);
+  border-bottom: 4px solid var(--secondary-color);
+  color: var(--white-color);
+}
+.report__table {
+  width: 100%;
+  border-spacing: 0.2rem;
+}
+.report__table-row {
+  font-size: var(--font-size-regular);
+  font-weight: 500;
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+}
+.report__table-data {
+  padding: 0.8rem;
+}

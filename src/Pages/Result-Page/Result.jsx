@@ -27,10 +27,10 @@ export const Result = () => {
               </div>
               <div className="result--quiz-container">
                 <h1 className="result--quiz-demo result--quiz-correct-answer">
-                  Correct: {state.Result.correct}
+                  Correct: {state.Result.correct_answer}
                 </h1>
                 <h1 className="result--quiz-demo result--quiz-wrong-score">
-                  wrong: {state.Result.wrong}
+                  wrong: {state.Result.wrong_answer}
                 </h1>
               </div>
             </div>
@@ -80,6 +80,11 @@ export const Result = () => {
           <button
             className="result-page--close"
             onClick={() => {
+              dispatch({
+                type: "categoryReport",
+                payload: state.CurrentQuiz.category,
+              });
+              dispatch({ type: "finalReport" });
               dispatch({ type: "reset" });
               navigate("/");
             }}
