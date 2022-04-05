@@ -10,7 +10,7 @@
 @media screen and (max-width: 800px) {
   /* For Layout */
   .report-page {
-    grid-template-rows: 4rem minmax(calc(100vh-4rem), 1fr);
+    grid-template-rows: 4rem minmax(calc(100vh - 4rem), 1fr);
     grid-template-areas:
       "header"
       "main";
