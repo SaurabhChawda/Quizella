@@ -8,8 +8,7 @@
     "footer";
 }
 .report__main {
-  padding-bottom: 3rem;
-  grid: main;
+  grid-area: main;
   background-color: var(--primary-color);
 }
 /* Results Header Start Here */
