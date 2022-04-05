@@ -1,0 +1,36 @@
+@media screen and (max-width: 800px) {
+  /* For Layout */
+  .login-page {
+    grid-template-rows: 4rem minmax(calc(100vh - 4rem), 1fr);
+    grid-template-areas:
+      "header"
+      "main";
+  }
+
+  /* Hide Desktop Navbar */
+
+  .nav-bar--simple {
+    display: none;
+  }
+  /* Hide Footer */
+
+  .footer {
+    display: none;
+  }
+
+  /* Show Mobile Navbar */
+
+  .nav-bar--mobile {
+    padding-right: 8px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav__input--search {
+    width: 75%;
+  }
+
+  /* bottom nav bar */
+  .nav-bar-tab {
+    display: block;
+  }
+}
