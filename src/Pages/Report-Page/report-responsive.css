@@ -1,0 +1,54 @@
+@media screen and (max-width: 1050px) {
+  .report--header--container {
+    flex-direction: column;
+    margin: 3rem 3rem;
+  }
+  .report {
+    margin: 1rem 1rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  /* For Layout */
+  .report-page {
+    grid-template-rows: 4rem minmax(calc(100vh - 4rem), 1fr);
+    grid-template-areas:
+      "header"
+      "main";
+  }
+
+  /* Hide Desktop Navbar */
+
+  .nav-bar--simple {
+    display: none;
+  }
+  /* Hide Footer */
+
+  .footer {
+    display: none;
+  }
+
+  /* Show Mobile Navbar */
+
+  .nav-bar--mobile {
+    padding-right: 8px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav__input--search {
+    width: 75%;
+  }
+
+  /* bottom nav bar */
+  .nav-bar-tab {
+    display: block;
+  }
+}
+@media screen and (max-width: 450px) {
+  .report--quiz-demo {
+    width: 100%;
+  }
+  .report--header--container {
+    flex-direction: column;
+    margin: 1rem 1.5rem;
+  }
+}
