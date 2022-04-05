@@ -1,0 +1,53 @@
+@media screen and (max-width: 500px) {
+  .signup-form {
+    margin: 1rem;
+  }
+  .signup-form--name-wrapper,
+  .signup-form--password-wrapper {
+    display: block;
+    margin: 0;
+  }
+  .signup-form--username-wrapper,
+  .signup-form--user-password-wrapper {
+    display: block;
+  }
+  .signup-form__input--usergmail {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 800px) {
+  /* For Layout */
+  .signup-page {
+    grid-template-rows: 4rem minmax(calc(100vh - 4rem), 1fr);
+    grid-template-areas:
+      "header"
+      "main"
+  }
+
+  /* Hide Desktop Navbar */
+
+  .nav-bar--simple {
+    display: none;
+  }
+  /* Hide Footer */
+
+  .footer {
+    display: none;
+  }
+
+  /* Show Mobile Navbar */
+
+  .nav-bar--mobile {
+    padding-right: 8px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav__input--search {
+    width: 75%;
+  }
+
+  /* bottom nav bar */
+  .nav-bar-tab {
+    display: block;
+  }
+}
