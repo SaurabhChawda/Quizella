@@ -3,6 +3,7 @@ import { useQuiz } from "../../Context/QuizContext";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Modal } from "../../components/Modal/Modal.jsx";
+import uuid from "react-uuid";
 
 export const QuizQuestion = () => {
   const [nextQuestion, setnextQuestion] = useState(0);
@@ -21,7 +22,7 @@ export const QuizQuestion = () => {
           .filter((item, index) => index === nextQuestion)
           .map((item) => {
             return (
-              <section className="quiz-question--container">
+              <section key={item.id} className="quiz-question--container">
                 <div className="quiz-question--content-container">
                   <div className="quiz-question--header">
                     <h4 className="quiz-question--header-demo quiz-question--counter">
@@ -39,6 +40,7 @@ export const QuizQuestion = () => {
                     {item.options.map((value) => {
                       return (
                         <button
+                          key={uuid()}
                           className="quiz-question__btn"
                           onClick={() => {
                             dispatch({

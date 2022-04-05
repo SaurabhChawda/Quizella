@@ -1,6 +1,7 @@
 import "./result.css";
 import { useQuiz } from "../../Context/QuizContext";
 import { useNavigate } from "react-router-dom";
+import uuid from "react-uuid";
 export const Result = () => {
   const { state, dispatch } = useQuiz();
   const navigate = useNavigate();
@@ -39,9 +40,8 @@ export const Result = () => {
         <div className="result--correct-answer--container">
           {state.CurrentQuiz.ques &&
             state.CurrentQuiz.ques.map((item, index) => {
-              console.log(item.length);
               return (
-                <div key={item.id} className="result--content">
+                <div key={uuid()} className="result--content">
                   <p className="result__list--question">
                     Q-{index + 1} {item.question}
                   </p>

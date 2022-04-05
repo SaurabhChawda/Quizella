@@ -5,6 +5,7 @@ import { Footer } from "../../components/Footer/Footer";
 import { useQuiz } from "../../Context/QuizContext";
 import "./report.css";
 import "./report-responsive.css";
+import uuid from "react-uuid";
 export function Report() {
   const {
     state: { Category_Report, Final_Report },
@@ -26,7 +27,7 @@ export function Report() {
             <div className="report--quiz-report">
               {Final_Report.map((item) => {
                 return (
-                  <div className="report--quiz-container">
+                  <div key={uuid()} className="report--quiz-container">
                     <h1 className="report--quiz-demo report--quiz-total-score">
                       Score : {item.score}
                     </h1>
@@ -48,7 +49,7 @@ export function Report() {
         <section className="report">
           {Category_Report.map((item) => {
             return (
-              <div className="report--wrapper">
+              <div key={uuid()} className="report--wrapper">
                 <div className="report--header--wrapper">
                   <h3 className="report--header">{item.category}</h3>
                 </div>

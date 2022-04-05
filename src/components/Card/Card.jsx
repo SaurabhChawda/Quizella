@@ -12,7 +12,7 @@ export function Card() {
         {updatedData &&
           updatedData.map((item) => {
             return (
-              <div className="card__wrapper">
+              <div key={item.id} className="card__wrapper">
                 <div className="card__primary--actions">
                   <div className="card__bg">
                     <img
