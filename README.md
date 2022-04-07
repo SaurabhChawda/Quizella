@@ -16,7 +16,7 @@ Quizella is a Quiz App, where user can test their Knowledge based on the selecte
 
 [https://quizella.netlify.app/](https://quizella.netlify.app/)
 
-# Trendy-T ScreenShots
+# Quizella ScreenShots
 
 ![Home-Page](/public/assets/image/Markdown-Images/Home-Page.png)
 ![Rules-Page](/public/assets/image/Markdown-Images/Rule-page.png)
