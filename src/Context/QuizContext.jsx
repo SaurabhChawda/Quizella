@@ -1,5 +1,6 @@
 import { createContext, useContext, useReducer, useEffect, useState } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 import { QuizReducer } from "../Reducer/QuizReducer";
 import { useAuth } from "../Context/AuthContext";
 const QuizContext = createContext();
@@ -61,32 +62,38 @@ const QuizProvider = ({ children }) => {
 
   useEffect(() => {
     if (authState.isUserLoggedIn) {
-      try {
-        (async () => {
+      (async () => {
+        try {
           await axios.post("/api/user/report", state.Report, {
             headers: { authorization: login.token },
           });
-        })();
-      } catch (error) {
-        console.log(error);
-      }
+        } catch (error) {
+          console.log(error);
+        }
+      })();
+    } else {
+      toast.error("Your are not Logged In");
     }
-  },[state.Report]);
+  }, [state.Report]);
 
   const [showReport, setShowReport] = useState(state.Report);
 
   useEffect(() => {
-    (async () => {
-      try {
-        const {
-          data: { report },
-        } = await axios.get("/api/user/report", { headers: { authorization: login.token } });
-        setShowReport(report);
-      } catch (error) {
-        console.log(error);
-      }
-    })();
-  },[state.Report]);
+    if (authState.isUserLoggedIn) {
+      (async () => {
+        try {
+          const {
+            data: { report },
+          } = await axios.get("/api/user/report", { headers: { authorization: login.token } });
+          setShowReport(report);
+        } catch (error) {
+          console.log(error);
+        }
+      })();
+    } else {
+      toast.error("Your are not Logged In");
+    }
+  }, [state.Report]);
 
   return <QuizContext.Provider value={{ state, dispatch, showReport }}>{children}</QuizContext.Provider>;
 };
