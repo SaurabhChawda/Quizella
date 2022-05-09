@@ -41,9 +41,7 @@ const AuthProvider = ({ children }) => {
       });
       localStorage.setItem("login", JSON.stringify({ isUserLoggedIn: true, token: data.encodedToken }));
       authDispatch({ type: "LOGIN", payload: data.encodedToken });
-      {
-        state ? navigate(state.from.pathname) : navigate("/");
-      }
+      state ? navigate(state.from.pathname) : navigate("/");
       toast.success("Logged In Successfully");
     } catch (error) {
       console.log(error);

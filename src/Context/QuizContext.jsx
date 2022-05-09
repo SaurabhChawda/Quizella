@@ -71,9 +71,10 @@ const QuizProvider = ({ children }) => {
         console.log(error);
       }
     }
-  }, [state.Report]);
+  },[state.Report]);
 
   const [showReport, setShowReport] = useState(state.Report);
+
   useEffect(() => {
     (async () => {
       try {
@@ -85,7 +86,7 @@ const QuizProvider = ({ children }) => {
         console.log(error);
       }
     })();
-  }, [state.Report]);
+  },[state.Report]);
 
   return <QuizContext.Provider value={{ state, dispatch, showReport }}>{children}</QuizContext.Provider>;
 };

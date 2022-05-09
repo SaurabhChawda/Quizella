@@ -22,7 +22,7 @@ export const QuizQuestion = () => {
       }
     }, 1000);
     return () => clearTimeout(clearTimer);
-  }, [timer]);
+  },[timer]);
 
   return (
     <div className="quiz-question-page">
