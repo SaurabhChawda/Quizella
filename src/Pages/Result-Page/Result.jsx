@@ -1,7 +1,8 @@
 import "./result.css";
-import { useQuiz } from "../../Context/QuizContext";
+import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import uuid from "react-uuid";
+import { v4 as uuid } from "uuid";
+import { useQuiz } from "../../Context/QuizContext";
 export const Result = () => {
   const { state, dispatch } = useQuiz();
   const navigate = useNavigate();
@@ -11,28 +12,18 @@ export const Result = () => {
         <div className="result--header">
           <div className="result--header--container">
             <div className="result__img--container">
-              <img
-                className="result__img"
-                src="/assets/image/Result/Avatar.png"
-                alt="Star"
-              />
+              <img className="result__img" src="/assets/image/Result/Avatar.png" alt="Star" />
             </div>
             <div className="result--quiz-report">
               <div className="result--quiz-container">
-                <h1 className="result--quiz-demo result--quiz-total-score">
-                  Score: {state.Result.score}
-                </h1>
-                <h1 className="result--quiz-demo result--quiz-attempt-questions">
-                  Attempt: {state.Result.attempt}
-                </h1>
+                <h1 className="result--quiz-demo result--quiz-total-score">Score: {state.Result.score}</h1>
+                <h1 className="result--quiz-demo result--quiz-attempt-questions">Attempt: {state.Result.attempt}</h1>
               </div>
               <div className="result--quiz-container">
                 <h1 className="result--quiz-demo result--quiz-correct-answer">
                   Correct: {state.Result.correct_answer}
                 </h1>
-                <h1 className="result--quiz-demo result--quiz-wrong-score">
-                  wrong: {state.Result.wrong_answer}
-                </h1>
+                <h1 className="result--quiz-demo result--quiz-wrong-score">wrong: {state.Result.wrong_answer}</h1>
               </div>
             </div>
           </div>
@@ -50,10 +41,7 @@ export const Result = () => {
                       if (item.correct_answer === value) {
                         return (
                           <div className="result__btn--options">
-                            <button
-                              className="result__btn"
-                              style={{ backgroundColor: "green" }}
-                            >
+                            <button className="result__btn" style={{ backgroundColor: "green" }}>
                               {value}
                             </button>
                           </div>
@@ -61,10 +49,7 @@ export const Result = () => {
                       } else {
                         return (
                           <div className="result__btn--options">
-                            <button
-                              className="result__btn"
-                              style={{ backgroundColor: "red" }}
-                            >
+                            <button className="result__btn" style={{ backgroundColor: "red" }}>
                               {value}
                             </button>
                           </div>
@@ -86,10 +71,11 @@ export const Result = () => {
               });
               dispatch({ type: "finalReport" });
               dispatch({ type: "reset" });
+              toast.success("Report Updated Successfully");
               navigate("/");
             }}
           >
-            Close
+            Submit
           </button>
         </div>
       </section>

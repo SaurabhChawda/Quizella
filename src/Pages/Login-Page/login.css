@@ -85,6 +85,7 @@
   margin: 2rem 0 12px 0;
 }
 .login-form__btn--submit {
+  cursor: pointer;
   height: 2.5rem;
   width: 100%;
   padding: 4px 1rem;
@@ -111,23 +112,12 @@
   background-color: transparent;
   border-color: red;
 }
-.login-form--new-account {
-  display: flex;
-  justify-content: center;
-}
 .login-form--logOut {
   text-align: center;
 }
-.login-form__btn--logOut {
-  color: var(--primary-color);
-  font-size: var(--font-size-medium);
-  font-weight: 900;
-  background-color: transparent;
-  border: none;
-  margin-bottom: 5px;
-}
-.login-form__btn--logOut:hover {
-  color: red;
+.login-form--new-account {
+  display: flex;
+  justify-content: center;
 }
 .login-form__btn--new-account {
   margin: 8px;

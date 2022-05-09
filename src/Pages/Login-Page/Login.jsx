@@ -1,11 +1,24 @@
-import { Nav } from "../../components/Nav/Nav";
-import { Header } from "../../components/Header/Header";
-import { Footer } from "../../components/Footer/Footer";
-import { NavForTab } from "../../components/NavForTab/NavForTab";
-import { NavLink } from "react-router-dom";
 import "./login.css";
 import "./loginResponsive.css";
+import { Nav, Header, Footer, NavForTab } from "../../components/index.js";
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { useAuth } from "../../Context/AuthContext";
+
 export function Login() {
+  const { loginCredentials } = useAuth();
+  const [userLogin, setUserLogin] = useState({ username: "", password: "" });
+  const [showpassword, setShowPassword] = useState("password");
+
+  const loginHandler = (event, user) => {
+    event.preventDefault();
+    if (user.username === "" || user.password === "") {
+      console.log("Incorrect Password");
+    } else {
+      loginCredentials(user);
+    }
+  };
+
   return (
     <div className="login-page">
       <Nav />
@@ -15,62 +28,62 @@ export function Login() {
           <form className="login-form">
             <h1 className="login__title">Login</h1>
             <div className="login-form--primary-container">
-              <label
-                className="login-form__label login-form--username"
-                htmlFor="userName"
-              >
+              <label className="login-form__label login-form--username" htmlFor="userName">
                 <b>UserName</b>
               </label>
               <input
                 className="login-form__input-demo login-form__input--username"
                 type="email"
-                placeholder="Enter UserName"
+                placeholder="trendyt@gmail.com"
                 name="uname"
                 required
+                onChange={(event) => setUserLogin({ ...userLogin, username: event.target.value })}
               />
-              <label
-                className="login-form__label login-form--password"
-                htmlFor="password"
-              >
+              <label className="login-form__label login-form--password" htmlFor="password">
                 <b>Password</b>
               </label>
               <div className="login-form--password">
                 <input
                   className="login-form__input-demo login-form__input--password"
-                  type="password"
+                  type={showpassword}
                   placeholder="Enter Password"
                   name="password"
                   required
+                  onChange={(event) => setUserLogin({ ...userLogin, password: event.target.value })}
                 />
                 <i className="login-form__input--password-hide-icon">
-                  <img src="/assets/image/Login/eye.png" alt="Show Password" />
+                  <img
+                    src={
+                      showpassword === "password"
+                        ? "/assets/image/Login/eyeHide.png"
+                        : "/assets/image/Login/eyeShow.png"
+                    }
+                    alt="Show Password"
+                    onClick={() => setShowPassword(showpassword === "password" ? "text" : "password")}
+                  />
                 </i>
               </div>
             </div>
             <div className="login-form--remember-forget-password">
-              <label className="login-form--remember-me">
-                <input
-                  className="login-form__input--remember-me"
-                  type="checkbox"
-                  defaultChecked="checked"
-                  name="remember"
-                />
-                Remember me
-              </label>
-              <button className="login-form__btn--forget-password">
-                Forget password
-              </button>
+              <button className="login-form__btn--forget-password">Forget password</button>
             </div>
             <div className="login-form--submit">
-              <button className="login-form__btn--submit">Login</button>
+              <button
+                className="login-form__btn--submit"
+                onClick={(event) => {
+                  loginHandler(event, userLogin);
+                }}
+              >
+                Login
+              </button>
             </div>
             <div className="login-form--new-account">
-              <NavLink className="login-form__btn--new-account" to="/signup/">
-                Create New Account
+              <small className="login-form__btn--new-account login-form__btn--new-account-text">
+                Don't have an Account ?
+              </small>
+              <NavLink className="login-form__btn--new-account" to="/signUp/">
+                SignUp
               </NavLink>
-            </div>
-            <div className="login-form--logOut">
-              <button className="login-form__btn--logOut">LogOut</button>
             </div>
           </form>
         </section>

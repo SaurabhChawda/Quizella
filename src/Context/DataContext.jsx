@@ -8,17 +8,17 @@ const DataProvider = ({ children }) => {
   useEffect(() => {
     (async () => {
       try {
-        const response = await axios.get("/api/data");
-        setdata(response.data.data);
+        const {
+          data: { questions },
+        } = await axios.get("/api/questions");
+        setdata(questions);
       } catch (error) {
         console.log(error);
       }
     })();
   }, []);
 
-  return (
-    <DataContext.Provider value={{ data }}>{children}</DataContext.Provider>
-  );
+  return <DataContext.Provider value={{ data }}>{children}</DataContext.Provider>;
 };
 
 const useData = () => useContext(DataContext);
