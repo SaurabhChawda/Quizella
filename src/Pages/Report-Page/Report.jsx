@@ -8,7 +8,9 @@ import "./report-responsive.css";
 import { v4 as uuid } from "uuid";
 export function Report() {
   const {
-    showReport: { Category_Report, Final_Report },
+    state: {
+      Report: { Category_Report, Final_Report },
+    },
   } = useQuiz();
   return (
     <div className="report-page">

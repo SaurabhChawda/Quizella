@@ -70,8 +70,8 @@ export const Result = () => {
                 payload: state.CurrentQuiz.category,
               });
               dispatch({ type: "finalReport" });
+              toast.success("Upate Report Successfully");
               dispatch({ type: "reset" });
-              toast.success("Report Updated Successfully");
               navigate("/");
             }}
           >

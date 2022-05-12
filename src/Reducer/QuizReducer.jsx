@@ -1,5 +1,10 @@
 export const QuizReducer = (state, action) => {
   switch (action.type) {
+    case "Load_Report":
+      return {
+        ...state,
+        Report: action.payload,
+      };
     case "Category":
       return {
         ...state,
