@@ -66,13 +66,15 @@
 .quiz-question__btn {
   width: 100%;
   padding: 0.5rem;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   color: var(--white-color);
   font-size: var(--font-size-regular);
   border-radius: 5px;
   cursor: pointer;
 }
-
+.quiz-question__btn:hover {
+  background-color: var(--primary-color);
+}
 /* quiz Question list Ends here  */
 
 /* Quiz Quit Skip button */
@@ -82,6 +84,7 @@
   justify-content: space-between;
 }
 .quiz-question__btn--demo {
+  cursor: pointer;
   margin: 0.5rem 0rem;
   padding: 0.5rem 1rem;
   border-radius: 8px;
