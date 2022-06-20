@@ -105,11 +105,16 @@
   margin-bottom: 3rem;
 }
 .result-page--close {
+  cursor: pointer;
   padding: 0.5rem 1rem;
   background-color: var(--white-color);
   color: var(--black-color);
   font-size: var(--font-size-medium);
   border-radius: 0.5rem;
+}
+.result-page--close:hover {
+  background-color: green;
+  color: var(--white-color);
 }
 
 /* quiz Question list Ends here  */

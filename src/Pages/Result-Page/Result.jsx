@@ -28,6 +28,23 @@ export const Result = () => {
             </div>
           </div>
         </div>
+        <div className="result-page-close--container">
+          <button
+            className="result-page--close"
+            onClick={() => {
+              dispatch({
+                type: "categoryReport",
+                payload: state.CurrentQuiz.category,
+              });
+              dispatch({ type: "finalReport" });
+              toast.success("Upate Report Successfully");
+              dispatch({ type: "reset" });
+              navigate("/");
+            }}
+          >
+            Submit
+          </button>
+        </div>
         <div className="result--correct-answer--container">
           {state.CurrentQuiz.ques &&
             state.CurrentQuiz.ques.map((item, index) => {
@@ -60,23 +77,6 @@ export const Result = () => {
                 </div>
               );
             })}
-        </div>
-        <div className="result-page-close--container">
-          <button
-            className="result-page--close"
-            onClick={() => {
-              dispatch({
-                type: "categoryReport",
-                payload: state.CurrentQuiz.category,
-              });
-              dispatch({ type: "finalReport" });
-              toast.success("Upate Report Successfully");
-              dispatch({ type: "reset" });
-              navigate("/");
-            }}
-          >
-            Submit
-          </button>
         </div>
       </section>
     </div>

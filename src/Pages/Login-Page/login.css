@@ -82,9 +82,9 @@
 }
 .login-form--submit {
   text-align: center;
-  margin: 2rem 0 12px 0;
 }
 .login-form__btn--submit {
+  margin-top: 8px;
   cursor: pointer;
   height: 2.5rem;
   width: 100%;
